@@ -18,14 +18,3 @@ const sanitizeMiddleware = (req, res, next) => {
 };
 
 module.exports = sanitizeMiddleware;
-
-const sanitizeInput = (text) => {
-  if (typeof text !== "string") return text;
-
-  return sanitizeHtml(text, {
-    allowedTags: [],
-    allowedAttributes: {},
-  }).trim();
-};
-
-module.exports = sanitizeInput;
